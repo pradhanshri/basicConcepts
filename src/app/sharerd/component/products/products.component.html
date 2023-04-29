@@ -1,1 +1,41 @@
-<p>products works!</p>
+<!-- Eevent Binding -->
+
+<div class="container mt-4">
+    <h2>Event Binding</h2>
+    <input type="text" class="form-control my-4" (keyup)="onKeyUp($event)">
+
+    <p class="alert alert-info">{{ProdStatus}}</p>
+
+<button class="btn btn-primary mr-2" [disabled] = "isDisabled" (click)="onBtnClick()">Add Product</button>
+
+<button class="btn btn-primary " [disabled] = "isDisabled" (click)="onBtnRemove()">Remove Product</button>
+
+<hr>
+
+<!-- Two-way Binding Using Event Binding -->
+<h3>Two-Way Data Binding Using Event & Property</h3>
+<div class="form-group">
+    <label for="Product Search">Product Search 1</label>
+    <input type="text" class="form-control my-2" (input)="onSearch($event)">
+</div>
+
+<P>{{pSearch}}</P>
+
+<P [innerHTML]="pSearch"></P>
+
+<h4>Two-Way Data Binding Using ngModel</h4>
+
+<div class="form-group">
+    <label for="Product Search">Product Search 2</label>
+    <input type="text" class="form-control my-2" [(ngModel)]="pSearch">
+</div>
+
+<p [innerHTML]="pSearch"></p>
+
+</div>
+
+
+
+<app-product></app-product>
+<app-product></app-product>
+
