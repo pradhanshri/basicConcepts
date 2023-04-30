@@ -2,14 +2,22 @@
 
 <!-- String Interpolation -->
     
-<p> The product name is {{pName}} and the product id will be {{pId}}. The product would be in state of {{pStatus}}</p>
+<p [ngStyle]="{backgroundColor:getColor()}"> The product name is {{pName}} and the product id will be {{pId}}. The product would be in state of {{pStatus}}
+    <Strong *ngIf="isProdAvalaible; else prodnotAvail">The product is available to ship.</Strong>
+
+    <ng-template #prodnotAvail>
+        <strong>
+        The product is not available and can't be shipped.
+    </strong>
+    </ng-template>
+</p>
 
 <!-- Property Binding -->
 
-<input type="text" [value]="pName" class="form-control">
+<!-- <input type="text" [value]="pName" class="form-control">
 
 <button class="btn btn-primary" [disabled] = "isDisabled">Add Product</button> <br>
 <strong>{{pName}}</strong>
 
-<strong [innerHTML]="pName" [innerHTML]="pId"></strong>
+<strong [innerHTML]="pName" [innerHTML]="pId"></strong> -->
 </div>
